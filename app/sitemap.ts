@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { products } from '@/app/produkty'
 import { productPath } from '@/lib/product'
+import { REALIZATIONS, realizationPath } from '@/lib/realizations'
 
 export const dynamic = 'force-static'
 
@@ -12,5 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/od-reki/` },
     { url: `${BASE_URL}/regulamin/` },
     ...products.map((product) => ({ url: `${BASE_URL}${productPath(product)}` })),
+    { url: `${BASE_URL}/realizacje/` },
+    ...REALIZATIONS.map((realization) => ({ url: `${BASE_URL}${realizationPath(realization)}` })),
   ]
 }

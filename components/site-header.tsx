@@ -4,6 +4,7 @@ import { COMPANY } from '@/lib/product'
 const NAV = [
   { href: '/#produkty', label: 'Produkty' },
   { href: '/od-reki/', label: 'Od ręki' },
+  { href: '/realizacje/', label: 'Realizacje' },
   { href: '/regulamin/', label: 'Regulamin' },
   { href: '/#kontakt', label: 'Kontakt' },
 ]
