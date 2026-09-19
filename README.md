@@ -27,3 +27,4 @@ Spisane tutaj, bo projekt Vercel stoi na prywatnym koncie (Hobby, bez członków
   preview bez logowania).
 - **Ruleset `main`:** PR wymagany, check `site` wymagany, 1 approve; bypass tylko dla GitHub App
   do merge'a waivera. GitHub App fabryki (bot kodujący) bez bypassu.
+
