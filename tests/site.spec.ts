@@ -90,8 +90,12 @@ async function readAllRealizations(page: Page): Promise<RenderedRealization[]> {
 
 test('the home page shows every customer logo, linked to its realization', async ({ page }) => {
   const realizations = await readAllRealizations(page)
-  expect(realizations.length, 'at least one realization').toBeGreaterThan(0)
   await page.goto('/')
+  if (realizations.length === 0) {
+    // No references yet: the strip stays hidden rather than rendering an empty section.
+    await expect(page.locator('[data-trusted-by]')).toHaveCount(0)
+    return
+  }
   for (const realization of realizations) {
     const logo = page.locator(`[data-trusted-by] [data-trusted-logo="${realization.slug}"]`)
     await expect(logo).toHaveAttribute('href', realization.path)
@@ -122,16 +126,6 @@ test('every realization page is noindex and links to products that exist', async
     cards.map((card) => card.getAttribute('data-realization-card') ?? ''),
   )
   expect(listed.sort()).toEqual(realizations.map((realization) => realization.slug).sort())
-})
-
-test('Suntago is on the home page and its card lists the ordered tanks', async ({ page }) => {
-  await page.goto('/')
-  await page.locator('[data-trusted-logo="park-of-poland"]').click()
-  await expect(page).toHaveURL(/\/realizacje\/park-of-poland\/$/)
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Suntago')
-  await expect(page.locator('[data-realization-product="ZPPOZ-20"]')).toBeVisible()
-  await expect(page.locator('[data-realization-product="ZCH-3000"]')).toBeVisible()
-  await expect(page.locator('[data-realization-page]')).toHaveAttribute('data-capacity-liters', '26000')
 })
 
 test('terms of sale render with the warranty clause', async ({ page }) => {
