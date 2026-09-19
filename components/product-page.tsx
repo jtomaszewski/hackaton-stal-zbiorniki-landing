@@ -52,7 +52,7 @@ export function ProductPage({ product, children }: { product: Product; children:
           Strona główna
         </Link>{' '}
         /{' '}
-        <Link href={`/#${product.category}`} className="hover:text-navy-900">
+        <Link href="/#produkty" className="hover:text-navy-900">
           {CATEGORIES[product.category]}
         </Link>
       </nav>
