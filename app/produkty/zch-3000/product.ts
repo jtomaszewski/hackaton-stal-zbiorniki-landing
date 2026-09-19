@@ -14,4 +14,5 @@ export const product = {
   priceNetPln: 31200,
   vatRate: 23,
   shape: 'vertical',
+  photo: '/photos/zbiornik-pionowy-niebieski.webp',
 } satisfies Product

@@ -8,7 +8,7 @@ import {
   formatCapacity,
   formatPln,
   grossPrice,
-  SHAPE_IMAGES,
+  productPhoto,
   type Product,
 } from '@/lib/product'
 
@@ -57,10 +57,10 @@ export function ProductPage({ product, children }: { product: Product; children:
         </Link>
       </nav>
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
-        <div className="relative self-start rounded-sm bg-white p-10">
-          <Image src={SHAPE_IMAGES[product.shape]} alt={product.title} width={480} height={300} className="mx-auto w-full max-w-md" />
+        <div className="relative aspect-[4/3] self-start overflow-hidden rounded-md bg-steel-100 shadow-sm ring-1 ring-steel-100">
+          <Image src={productPhoto(product)} alt={product.title} fill priority sizes="(min-width: 1024px) 560px, 100vw" className="object-cover" />
           {product.inStock && (
-            <span className="absolute left-4 top-4 rounded-sm bg-signal-500 px-3 py-1 text-sm font-bold uppercase text-white">
+            <span className="absolute left-4 top-4 rounded-sm bg-signal-500 px-3 py-1 text-sm font-bold uppercase text-white shadow">
               Od ręki
             </span>
           )}
@@ -69,7 +69,7 @@ export function ProductPage({ product, children }: { product: Product; children:
           <p className="text-sm font-semibold uppercase tracking-wide text-steel-500">SKU: {product.sku}</p>
           <h1 className="mt-1 font-display text-4xl font-bold leading-tight">{product.title}</h1>
           {product.subtitle && <p className="mt-2 text-lg text-steel-700">{product.subtitle}</p>}
-          <div className="mt-6 rounded-sm border border-steel-100 bg-white p-5">
+          <div className="mt-6 rounded-md bg-white p-6 shadow-sm ring-1 ring-steel-100">
             {product.priceNetPln === null || gross === null ? (
               <p className="text-2xl font-bold">Cena na zapytanie</p>
             ) : (
@@ -89,15 +89,15 @@ export function ProductPage({ product, children }: { product: Product; children:
               Wyślij zapytanie
             </a>
           </div>
-          <table className="mt-6 w-full border-collapse text-left">
+          <table className="mt-6 w-full border-collapse overflow-hidden rounded-md bg-white text-left shadow-sm ring-1 ring-steel-100">
             <caption className="sr-only">Parametry techniczne</caption>
             <tbody>
               {rows.map(([label, value]) => (
-                <tr key={label} className="border-b border-steel-100">
-                  <th scope="row" className="py-2 pr-4 font-medium text-steel-700">
+                <tr key={label} className="border-b border-steel-100 last:border-0">
+                  <th scope="row" className="px-4 py-3 font-medium text-steel-700">
                     {label}
                   </th>
-                  <td className="py-2 font-semibold">{value}</td>
+                  <td className="px-4 py-3 font-semibold">{value}</td>
                 </tr>
               ))}
             </tbody>

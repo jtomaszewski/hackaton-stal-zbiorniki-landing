@@ -14,4 +14,5 @@ export const product = {
   priceNetPln: 18900,
   vatRate: 23,
   shape: 'horizontal',
+  photo: '/photos/zbiornik-dwuplaszczowy.webp',
 } satisfies Product

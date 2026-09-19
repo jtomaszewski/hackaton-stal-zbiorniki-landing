@@ -49,6 +49,7 @@ Touch only the paths your task needs. Do not change components, `lib/`, tests, C
 | `priceNetPln` | `unitPriceNet` of the `regular` PLN price as a number, or `null` ("Cena na zapytanie") |
 | `vatRate` | `taxRate`, default 23 |
 | `shape` | `underground` if `metadata.installation` is `underground`; else `metadata.orientation`; else `mixer` for `urzadzenia`; else `vertical` |
+| `photo` | omit (the page shows the stock photo for `shape`) unless a photo was added under `public/photos/` |
 | page description (`<p>` children) | `description`, one `<p>` per paragraph |
 
 If a required value (`category`, `capacityLiters`, `material`) cannot be derived, **do not guess**: stop and ask the human.

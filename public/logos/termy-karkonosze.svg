@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64" role="img" aria-label="Termy Karkonosze">
+  <path d="M4 50 L20 22 L30 36 L40 14 L60 50 Z" fill="#1f5a52"/>
+  <path d="M8 56 q6 -5 12 0 t12 0 t12 0 t12 0" fill="none" stroke="#3fb3a4" stroke-width="3"/>
+  <text x="70" y="32" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#1f5a52">TERMY</text>
+  <text x="70" y="52" font-family="Georgia, serif" font-size="16" letter-spacing="2.5" fill="#3fb3a4">KARKONOSZE</text>
+</svg>

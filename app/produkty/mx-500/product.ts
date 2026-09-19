@@ -14,4 +14,5 @@ export const product = {
   priceNetPln: 42800,
   vatRate: 23,
   shape: 'mixer',
+  photo: '/photos/mieszalnik.webp',
 } satisfies Product

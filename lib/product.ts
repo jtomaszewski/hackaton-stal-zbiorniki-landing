@@ -30,13 +30,19 @@ export type Product = {
   priceNetPln: number | null
   vatRate: number
   shape: Shape
+  /** Photo under `public/photos/`; when unset the page shows the stock photo for `shape`. */
+  photo?: string
 }
 
-export const SHAPE_IMAGES: Record<Shape, string> = {
-  vertical: '/products/vertical.svg',
-  horizontal: '/products/horizontal.svg',
-  underground: '/products/underground.svg',
-  mixer: '/products/mixer.svg',
+const SHAPE_PHOTOS: Record<Shape, string> = {
+  vertical: '/photos/zbiorniki-pionowe.webp',
+  horizontal: '/photos/zbiornik-dwuplaszczowy.webp',
+  underground: '/photos/zbiorniki-poziome.webp',
+  mixer: '/photos/mieszalnik.webp',
+}
+
+export function productPhoto(product: Pick<Product, 'photo' | 'shape'>): string {
+  return product.photo ?? SHAPE_PHOTOS[product.shape]
 }
 
 export function productPath(product: Pick<Product, 'sku'>): string {
