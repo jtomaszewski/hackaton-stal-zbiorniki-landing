@@ -34,6 +34,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/realizacje/" className="hover:text-white">
+                Realizacje
+              </Link>
+            </li>
+            <li>
               <Link href="/regulamin/" className="hover:text-white">
                 Regulamin sprzedaży
               </Link>

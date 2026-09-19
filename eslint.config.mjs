@@ -10,7 +10,9 @@ const onlyImports = (allowed, where) => [
     patterns: [
       {
         regex: `^(?!(${allowed.join('|')})$).*`,
-        message: `${where} may only import: ${allowed.map((a) => a.replace(/\\/g, '')).join(', ')}. See AGENTS.md.`,
+        message: allowed.length
+          ? `${where} may only import: ${allowed.map((a) => a.replace(/\\/g, '')).join(', ')}. See AGENTS.md.`
+          : `${where} may not import anything. See AGENTS.md.`,
       },
     ],
   },
@@ -52,6 +54,14 @@ const eslintConfig = defineConfig([
     files: ['app/produkty/index.ts'],
     rules: {
       'no-restricted-imports': onlyImports(['@/lib/product', '\\./[a-z0-9-]+/product'], 'The product registry'),
+      'no-restricted-syntax': noCodeBeyondTemplate,
+    },
+  },
+  {
+    // Realizations are change class `content` too (SPEC-006): a data-only registry.
+    files: ['lib/realizations.ts'],
+    rules: {
+      'no-restricted-imports': onlyImports([], 'The realization registry'),
       'no-restricted-syntax': noCodeBeyondTemplate,
     },
   },

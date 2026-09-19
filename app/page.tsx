@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ProductGrid } from '@/components/product-card'
 import { products } from '@/app/produkty'
 import { CATEGORIES, COMPANY, type Category } from '@/lib/product'
+import { REALIZATIONS, realizationPath } from '@/lib/realizations'
 
 const CERTIFICATES = [
   { code: 'PZH', text: 'Atest higieniczny na kontakt z wodą pitną.' },
@@ -94,6 +95,36 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {REALIZATIONS.length > 0 && (
+        <section aria-labelledby="zaufali-nam" data-trusted-by className="mx-auto max-w-6xl px-4 py-14">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 id="zaufali-nam" className="font-display text-3xl font-bold uppercase">
+                Zaufali nam
+              </h2>
+              <p className="text-steel-700">Zbiorniki z Kobierzyc pracują u klientów z przemysłu, energetyki i rekreacji.</p>
+            </div>
+            <Link href="/realizacje/" className="font-semibold text-signal-600 hover:underline">
+              Wszystkie realizacje ({REALIZATIONS.length}) →
+            </Link>
+          </div>
+          <ul className="mt-6 flex flex-wrap gap-4">
+            {REALIZATIONS.map((realization) => (
+              <li key={realization.slug}>
+                <Link
+                  href={realizationPath(realization)}
+                  data-trusted-logo={realization.slug}
+                  title={realization.title}
+                  className="grid h-28 w-56 place-items-center rounded-sm border border-steel-100 bg-white p-6 hover:border-signal-500"
+                >
+                  <Image src={realization.logo} alt={realization.customerName} width={128} height={60} className="max-h-16 w-auto" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section aria-labelledby="atesty" className="mx-auto max-w-6xl px-4 py-14">
         <h2 id="atesty" className="font-display text-3xl font-bold uppercase">

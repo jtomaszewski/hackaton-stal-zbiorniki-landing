@@ -23,6 +23,7 @@ The Open Mercato catalog is the source of truth for products; this site changes 
 | Path | Change class | Review |
 |---|---|---|
 | `app/produkty/**` | `content` | none if checks are green |
+| `lib/realizations.ts`, `public/logos/**`, `public/realizacje/**` | `content` | none if checks are green |
 | `app/regulamin/**` | `legal` | lawyer |
 | everything else | `code` | developer |
 
@@ -53,6 +54,14 @@ Touch only the paths your task needs. Do not change components, `lib/`, tests, C
 If a required value (`category`, `capacityLiters`, `material`) cannot be derived, **do not guess**: stop and ask the human.
 
 Product files may only import `@/lib/product`, `@/components/product-page` and `./product`; no scripts, `fetch`, hooks or `dangerouslySetInnerHTML`. ESLint enforces this.
+
+## Adding a realization from a fulfilled order
+
+1. Save the customer logo to `public/logos/<slug>.svg` (SVG stays SVG, raster becomes `.png`).
+2. Add one `Realization` entry to `REALIZATIONS` in `lib/realizations.ts`, newest first. `productSkus` is one entry per order line unit and every SKU must exist in `app/produkty` (the build fails otherwise); `capacityLiters` is the sum of their `capacityLiters`; `deliveredAt` is `YYYY-MM` of the fulfilment; `photos` stays `[]` until photos land in `public/realizacje/<slug>/`.
+3. Nothing else: the page `/realizacje/<slug>/`, the "Zaufali nam" logo and the sitemap entry come from the registry.
+
+`lib/realizations.ts` may not import anything; no scripts, `fetch` or hooks. ESLint enforces this.
 
 ## Terms of sale
 
