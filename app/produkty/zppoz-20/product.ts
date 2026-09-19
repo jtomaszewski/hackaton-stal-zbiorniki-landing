@@ -14,4 +14,5 @@ export const product = {
   priceNetPln: 64000,
   vatRate: 23,
   shape: 'vertical',
+  photo: '/photos/zbiornik-ppoz.webp',
 } satisfies Product

@@ -4,9 +4,14 @@ import { COMPANY } from '@/lib/product'
 export function SiteFooter() {
   return (
     <footer id="kontakt" className="bg-navy-950 text-steel-300">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:grid-cols-3">
         <div>
-          <p className="font-display text-xl font-bold uppercase text-white">{COMPANY.name}</p>
+          <p className="flex items-center gap-3 font-display text-xl font-bold uppercase text-white">
+            <span aria-hidden className="grid h-9 w-9 place-items-center rounded-md bg-signal-500 text-lg">
+              SZ
+            </span>
+            {COMPANY.name}
+          </p>
           <p className="mt-2">
             {COMPANY.street}
             <br />

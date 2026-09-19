@@ -14,4 +14,5 @@ export const product = {
   priceNetPln: 27500,
   vatRate: 23,
   shape: 'vertical',
+  photo: '/photos/zbiorniki-woda.webp',
 } satisfies Product

@@ -1,21 +1,30 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { formatCapacity, formatPln, productPath, SHAPE_IMAGES, type Product } from '@/lib/product'
+import { formatCapacity, formatPln, productPath, productPhoto, type Product } from '@/lib/product'
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <li data-product-card={product.sku} className="group relative flex flex-col overflow-hidden rounded-sm border border-steel-100 bg-white">
-      <div className="relative bg-steel-100 p-6">
-        <Image src={SHAPE_IMAGES[product.shape]} alt="" width={320} height={200} className="mx-auto h-36 w-auto" />
+    <li
+      data-product-card={product.sku}
+      className="group relative flex flex-col overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-steel-100 transition hover:-translate-y-0.5 hover:shadow-lg"
+    >
+      <div className="relative aspect-[4/3] overflow-hidden bg-steel-100">
+        <Image
+          src={productPhoto(product)}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
         {product.inStock && (
-          <span className="absolute left-3 top-3 rounded-sm bg-signal-500 px-2 py-1 text-xs font-bold uppercase text-white">
+          <span className="absolute left-3 top-3 rounded-sm bg-signal-500 px-2 py-1 text-xs font-bold uppercase tracking-wide text-white shadow">
             Od ręki
           </span>
         )}
       </div>
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-steel-500">{product.sku}</p>
-        <h3 className="font-display text-lg font-bold leading-tight">
+      <div className="flex flex-1 flex-col gap-2 p-5">
+        <p className="text-xs font-semibold uppercase tracking-wider text-steel-500">{product.sku}</p>
+        <h3 className="font-display text-xl font-bold leading-tight">
           <Link href={productPath(product)} className="after:absolute after:inset-0 group-hover:text-signal-600">
             {product.title}
           </Link>
@@ -23,8 +32,11 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-sm text-steel-700">
           {formatCapacity(product.capacityLiters)} · {product.material}
         </p>
-        <p className="mt-auto pt-2 font-semibold">
-          {product.priceNetPln === null ? 'Cena na zapytanie' : `${formatPln(product.priceNetPln)} netto`}
+        <p className="mt-auto flex items-center justify-between border-t border-steel-100 pt-3 font-semibold">
+          <span>{product.priceNetPln === null ? 'Cena na zapytanie' : `${formatPln(product.priceNetPln)} netto`}</span>
+          <span aria-hidden className="text-signal-600 transition group-hover:translate-x-1">
+            →
+          </span>
         </p>
       </div>
     </li>
@@ -33,7 +45,7 @@ export function ProductCard({ product }: { product: Product }) {
 
 export function ProductGrid({ products }: { products: Product[] }) {
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {products.map((product) => (
         <ProductCard key={product.sku} product={product} />
       ))}
