@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stal-Zbiorniki — strona demo
 
-## Getting Started
+Strona fikcyjnego producenta zbiorników stalowych, docelowe repo fabryki oprogramowania na
+Open Mercato ([SPEC-005](https://github.com/jtomaszewski/open-mercato-software-factory/blob/main/docs/specs/SPEC-005-2026-09-19-stal-zbiorniki-www.md)).
+Firma, dane kontaktowe i produkty są fikcyjne.
 
-First, run the development server:
+Next.js (App Router) ze static export. Każdy produkt to `app/produkty/<sku>/` (`product.ts`
+z danymi + `page.tsx` z opisem) i wpis w `app/produkty/index.ts`. Zasady dla agentów: [AGENTS.md](./AGENTS.md).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev        # http://localhost:3000
+npm run build      # statyczny eksport do out/
+npm test           # Playwright na out/ (najpierw build)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Check `site`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`.github/workflows/site.yml`: lint, typecheck, build, Playwright. Wymagany na `main`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Ustawienia poza repo
 
-## Learn More
+Spisane tutaj, bo projekt Vercel stoi na prywatnym koncie (Hobby, bez członków zespołu):
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Vercel:** projekt podpięty do tego repo, framework Next.js, bez zmiennych środowiskowych;
+  gałąź produkcyjna `main`; *Deployment Protection* dla preview **wyłączone** (prawnik otwiera
+  preview bez logowania).
+- **Ruleset `main`:** PR wymagany, check `site` wymagany, 1 approve; bypass tylko dla GitHub App
+  do merge'a waivera. GitHub App fabryki (bot kodujący) bez bypassu.
