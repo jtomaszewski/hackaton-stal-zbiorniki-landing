@@ -128,6 +128,16 @@ test('every realization page is noindex and links to products that exist', async
   expect(listed.sort()).toEqual(realizations.map((realization) => realization.slug).sort())
 })
 
+test('Suntago is on the home page and its card lists the ordered tanks', async ({ page }) => {
+  await page.goto('/')
+  await page.locator('[data-trusted-logo="park-of-poland"]').click()
+  await expect(page).toHaveURL(/\/realizacje\/park-of-poland\/$/)
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Suntago')
+  await expect(page.locator('[data-realization-product="ZPPOZ-20"]')).toBeVisible()
+  await expect(page.locator('[data-realization-product="ZCH-3000"]')).toBeVisible()
+  await expect(page.locator('[data-realization-page]')).toHaveAttribute('data-capacity-liters', '26000')
+})
+
 test('terms of sale render with the warranty clause', async ({ page }) => {
   await page.goto('/regulamin/')
   await expect(page.getByRole('heading', { level: 1, name: 'Regulamin sprzedaży' })).toBeVisible()
