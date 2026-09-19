@@ -25,16 +25,16 @@ export type Realization = {
 /** Every realization, newest first. A new entry here is a new page and a new logo. */
 export const REALIZATIONS: Realization[] = [
   {
-    slug: 'park-of-poland',
-    customerName: 'Park of Poland (Suntago)',
-    customerUrl: 'https://parkofpoland.com/',
-    logo: '/logos/park-of-poland.svg',
-    title: 'Zbiorniki na wodę technologiczną i chemię basenową dla parku wodnego Suntago',
+    slug: 'browar-ostrow',
+    customerName: 'Browar Rzemieślniczy Ostrów',
+    customerUrl: 'https://browar-ostrow.example/',
+    logo: '/logos/browar-ostrow.svg',
+    title: 'Zbiorniki na wodę technologiczną dla browaru rzemieślniczego',
     summary:
-      'Suntago w Park of Poland to największy kryty park wodny w Europie, 30 minut od Warszawy. Dostarczyliśmy naziemny zbiornik przeciwpożarowy 20 m³ i dwa zbiorniki 3000 l ze stali kwasoodpornej na chemię basenową.',
-    productSkus: ['ZPPOZ-20', 'ZCH-3000', 'ZCH-3000'],
-    capacityLiters: 26000,
-    deliveredAt: '2026-08',
+      'Browar Rzemieślniczy Ostrów warzy piwo w Ostrowie Wielkopolskim od 2015 roku. Dostarczyliśmy dwa zbiorniki na wodę pitną 2000 l ze stali nierdzewnej 1.4301 z atestem PZH, zasilające linię warzelną.',
+    productSkus: ['ZWP-2000', 'ZWP-2000'],
+    capacityLiters: 4000,
+    deliveredAt: '2026-05',
     photos: [],
   },
 ]
