@@ -25,6 +25,19 @@ export type Realization = {
 /** Every realization, newest first. A new entry here is a new page and a new logo. */
 export const REALIZATIONS: Realization[] = [
   {
+    slug: 'park-of-poland',
+    customerName: 'Park of Poland (Suntago)',
+    customerUrl: 'https://parkofpoland.com/',
+    logo: '/logos/park-of-poland.svg',
+    title: 'Zbiorniki dla największego parku wodnego w Europie',
+    summary:
+      'Suntago to największy zadaszony park wodny w Europie, oferujący wodne atrakcje dla dzieci i dorosłych. Dostarczyliśmy zbiornik przeciwpożarowy 20 m³ z certyfikatem CNBOP oraz dwa zbiorniki na kwasy 3000 l ze stali kwasoodpornej dla systemów uzdatniania wody.',
+    productSkus: ['ZPPOZ-20', 'ZCH-3000', 'ZCH-3000'],
+    capacityLiters: 26000,
+    deliveredAt: '2026-09',
+    photos: [],
+  },
+  {
     slug: 'browar-ostrow',
     customerName: 'Browar Rzemieślniczy Ostrów',
     customerUrl: 'https://browar-ostrow.example/',
