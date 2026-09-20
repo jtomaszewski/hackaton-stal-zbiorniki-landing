@@ -25,6 +25,19 @@ export type Realization = {
 /** Every realization, newest first. A new entry here is a new page and a new logo. */
 export const REALIZATIONS: Realization[] = [
   {
+    slug: 'suntago',
+    customerName: 'Park of Poland (Suntago)',
+    customerUrl: 'https://parkofpoland.com/',
+    logo: '/logos/suntago.svg',
+    title: 'Zbiorniki przeciwpożarowe i chemiczne dla parku wodnego',
+    summary:
+      'Suntago to największy kryty park wodny w Europie, oferujący strefy rozrywki Jamango oraz strefy relaksu i saun. Dostarczyliśmy zbiornik przeciwpożarowy 20 m³ oraz dwa zbiorniki na substancje chemiczne 3000 l obsługujące instalacje techniczne parku.',
+    productSkus: ['ZPPOZ-20', 'ZCH-3000', 'ZCH-3000'],
+    capacityLiters: 26000,
+    deliveredAt: '2026-09',
+    photos: [],
+  },
+  {
     slug: 'viessmann',
     customerName: 'Viessmann',
     customerUrl: 'https://www.viessmann.pl/',
