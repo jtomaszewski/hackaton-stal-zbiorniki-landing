@@ -2,7 +2,7 @@
 
 Strona Metal Zbiorniki sp. z o.o., producenta zbiorników stalowych z Jarocina — docelowe repo
 fabryki oprogramowania na Open Mercato
-([SPEC-005](https://github.com/jtomaszewski/open-mercato-software-factory/blob/main/docs/specs/SPEC-005-2026-09-19-stal-zbiorniki-www.md)).
+([SPEC-005](https://github.com/jtomaszewski/open-mercato-software-factory/blob/main/docs/specs/SPEC-005-2026-09-19-metal-zbiorniki-www.md)).
 Marka, dane kontaktowe, klienci i opinie pochodzą z [metal-zbiorniki.pl](https://metal-zbiorniki.pl/);
 katalog produktów i realizacje są danymi demo fabryki.
 

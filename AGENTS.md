@@ -11,7 +11,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 # Metal Zbiorniki website — agent rules
 
 The website of Metal Zbiorniki sp. z o.o., the steel-tank maker used in the Open Mercato
-software-factory demo. Spec: [SPEC-005](https://github.com/jtomaszewski/open-mercato-software-factory/blob/main/docs/specs/SPEC-005-2026-09-19-stal-zbiorniki-www.md).
+software-factory demo. Spec: [SPEC-005](https://github.com/jtomaszewski/open-mercato-software-factory/blob/main/docs/specs/SPEC-005-2026-09-19-metal-zbiorniki-www.md).
 Brand, contact details, customer logos and testimonials mirror [metal-zbiorniki.pl](https://metal-zbiorniki.pl/);
 the product catalog and the realizations are the demo's own data. The Open Mercato catalog is
 the source of truth for products; this site changes only by PR.
