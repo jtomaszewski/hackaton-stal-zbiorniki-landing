@@ -1,24 +1,28 @@
 @import "tailwindcss";
 
+/*
+ * Metal Zbiorniki brand: navy (#274086) on white, one pale blue tint, no second hue.
+ * `navy` is the brand blue and the action colour, `steel` the neutrals. One hue, so a
+ * button and a heading read as the same company.
+ */
 @theme {
-  --color-navy-950: #0a1826;
-  --color-navy-900: #0f2436;
-  --color-navy-800: #17344d;
-  --color-navy-700: #214664;
-  --color-steel-50: #f3f5f7;
-  --color-steel-100: #e4e8ec;
-  --color-steel-300: #b3bec8;
-  --color-steel-500: #7a8a99;
-  --color-steel-700: #4a5968;
-  --color-signal-500: #e8742a;
-  --color-signal-600: #cf5f18;
-  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-barlow-condensed), var(--font-barlow), ui-sans-serif, sans-serif;
+  --color-navy-950: #101a3a;
+  --color-navy-900: #16244b;
+  --color-navy-800: #1e3068;
+  --color-navy-700: #274086;
+  --color-navy-300: #829eea;
+  --color-steel-50: #f7f9fc;
+  --color-steel-100: #eef2fa;
+  --color-steel-200: #dfe6f4;
+  --color-steel-300: #c7d1e8;
+  --color-steel-500: #6f7c99;
+  --color-steel-700: #4a5568;
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--color-steel-50);
-  color: var(--color-navy-950);
+  background: #ffffff;
+  color: #333333;
 }
 
 html {

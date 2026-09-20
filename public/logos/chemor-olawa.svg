@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64" role="img" aria-label="Chemor Oława">
-  <polygon points="32,6 55,19 55,45 32,58 9,45 9,19" fill="none" stroke="#7b2d8e" stroke-width="5"/>
-  <circle cx="32" cy="32" r="8" fill="#7b2d8e"/>
-  <text x="66" y="36" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#3b1245">chemor</text>
-  <text x="66" y="56" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="5" fill="#7b2d8e">OŁAWA</text>
-</svg>

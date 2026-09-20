@@ -8,15 +8,14 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <article data-terms className="mx-auto max-w-3xl px-4 py-12 leading-relaxed text-steel-700 [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-navy-950 [&_li]:mt-1 [&_ol]:list-decimal [&_ol]:pl-6">
-      <h1 className="font-display text-4xl font-bold uppercase text-navy-950">Regulamin sprzedaży</h1>
+    <article data-terms className="mx-auto max-w-3xl px-4 py-12 leading-relaxed text-steel-700 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-navy-700 [&_li]:mt-1 [&_ol]:list-decimal [&_ol]:pl-6">
+      <h1 className="text-3xl font-bold text-navy-700">Regulamin sprzedaży</h1>
       <p className="mt-2">Obowiązuje od 1 stycznia 2026 r.</p>
 
       <h2>§ 1. Postanowienia ogólne</h2>
       <ol>
         <li>
-          Regulamin określa warunki sprzedaży zbiorników i urządzeń przez {COMPANY.name}, {COMPANY.street},{' '}
-          {COMPANY.city} (dalej: Sprzedawca).
+          Regulamin określa warunki sprzedaży zbiorników i urządzeń przez {COMPANY.name} (dalej: Sprzedawca).
         </li>
         <li>Regulamin dotyczy umów zawieranych z przedsiębiorcami.</li>
       </ol>

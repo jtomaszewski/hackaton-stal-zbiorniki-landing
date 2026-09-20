@@ -65,12 +65,15 @@ export function formatCapacity(liters: number): string {
   return `${new Intl.NumberFormat('pl-PL').format(liters)} l`
 }
 
+/**
+ * Brand only. This is a demo site, so it carries no real contact data: `email` is a
+ * `.example` address that the inquiry buttons point at, and there is no phone or postal
+ * address anywhere on the site.
+ */
 export const COMPANY = {
-  name: 'Stal-Zbiorniki Sp. z o.o.',
-  shortName: 'Stal-Zbiorniki',
-  street: 'ul. Hutnicza 14',
-  city: '55-040 Kobierzyce',
-  phone: '+48 71 555 01 20',
-  email: 'zapytania@stal-zbiorniki.example',
+  name: 'Metal Zbiorniki sp. z o.o.',
+  shortName: 'Metal Zbiorniki',
+  tagline: 'Zbiorniki stalowe na miarę',
+  email: 'zapytania@metal-zbiorniki.example',
   since: 2008,
 } as const
