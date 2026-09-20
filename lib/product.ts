@@ -66,11 +66,23 @@ export function formatCapacity(liters: number): string {
 }
 
 export const COMPANY = {
-  name: 'Stal-Zbiorniki Sp. z o.o.',
-  shortName: 'Stal-Zbiorniki',
-  street: 'ul. Hutnicza 14',
-  city: '55-040 Kobierzyce',
-  phone: '+48 71 555 01 20',
-  email: 'zapytania@stal-zbiorniki.example',
+  name: 'Metal Zbiorniki sp. z o.o.',
+  shortName: 'Metal Zbiorniki',
+  tagline: 'Zbiorniki stalowe na miarę',
+  street: 'ul. Powstańców Wielkopolskich 1',
+  city: '63-200 Jarocin',
+  mapUrl: 'https://maps.google.com/?q=ul.+Powstańców+Wielkopolskich+1,+63-200+Jarocin',
+  phone: '+48 600 427 656',
+  email: 'biuro@metal-zbiorniki.pl',
+  nip: '6172227419',
+  regon: '526472938',
+  krs: '0001060186',
   since: 2008,
 } as const
+
+/** The three desks the company publishes, in the order the contact section lists them. */
+export const CONTACTS = [
+  { role: 'Zapytania i oferty', phone: '+48 600 427 656', email: 'biuro@metal-zbiorniki.pl' },
+  { role: 'Dokumentacje, rysunki', phone: '+48 783 380 935', email: 'projekty@metal-zbiorniki.pl' },
+  { role: 'Obsługa biura, księgowość', phone: '+48 570 062 851', email: 'sekretariat@metal-zbiorniki.pl' },
+] as const

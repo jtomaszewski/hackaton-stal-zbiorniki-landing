@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64" role="img" aria-label="Wodociągi Doliny Baryczy">
-  <path d="M30 6c9 12 16 21 16 30a16 16 0 0 1-32 0c0-9 7-18 16-30z" fill="#0e7cc4"/>
-  <path d="M20 38c4 6 12 7 18 2" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-  <text x="58" y="30" font-family="Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#0b3f66">WODOCIĄGI</text>
-  <text x="58" y="50" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#0e7cc4">DOLINY BARYCZY</text>
-</svg>

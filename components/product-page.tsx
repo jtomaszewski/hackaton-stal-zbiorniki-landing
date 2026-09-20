@@ -48,28 +48,28 @@ export function ProductPage({ product, children }: { product: Product; children:
       className="mx-auto max-w-6xl px-4 py-10"
     >
       <nav aria-label="Ścieżka" className="text-sm text-steel-500">
-        <Link href="/" className="hover:text-navy-900">
+        <Link href="/" className="hover:text-navy-700">
           Strona główna
         </Link>{' '}
         /{' '}
-        <Link href="/#produkty" className="hover:text-navy-900">
+        <Link href="/#produkty" className="hover:text-navy-700">
           {CATEGORIES[product.category]}
         </Link>
       </nav>
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
-        <div className="relative aspect-[4/3] self-start overflow-hidden rounded-md bg-steel-100 shadow-sm ring-1 ring-steel-100">
+        <div className="relative aspect-[4/3] self-start overflow-hidden rounded-md bg-steel-100 shadow-sm ring-1 ring-steel-200">
           <Image src={productPhoto(product)} alt={product.title} fill priority sizes="(min-width: 1024px) 560px, 100vw" className="object-cover" />
           {product.inStock && (
-            <span className="absolute left-4 top-4 rounded-sm bg-signal-500 px-3 py-1 text-sm font-bold uppercase text-white shadow">
+            <span className="absolute left-4 top-4 rounded-sm bg-navy-700 px-3 py-1 text-sm font-bold uppercase text-white shadow">
               Od ręki
             </span>
           )}
         </div>
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-steel-500">SKU: {product.sku}</p>
-          <h1 className="mt-1 font-display text-4xl font-bold leading-tight">{product.title}</h1>
+          <h1 className="mt-1 text-3xl font-bold leading-tight text-navy-700">{product.title}</h1>
           {product.subtitle && <p className="mt-2 text-lg text-steel-700">{product.subtitle}</p>}
-          <div className="mt-6 rounded-md bg-white p-6 shadow-sm ring-1 ring-steel-100">
+          <div className="mt-6 rounded-md bg-white p-6 shadow-sm ring-1 ring-steel-200">
             {product.priceNetPln === null || gross === null ? (
               <p className="text-2xl font-bold">Cena na zapytanie</p>
             ) : (
@@ -84,16 +84,16 @@ export function ProductPage({ product, children }: { product: Product; children:
             )}
             <a
               href={inquiry}
-              className="mt-4 inline-block rounded-sm bg-signal-500 px-5 py-3 font-semibold text-white hover:bg-signal-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900"
+              className="mt-4 inline-block rounded-sm bg-navy-700 px-5 py-3 font-semibold text-white hover:bg-navy-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-700"
             >
               Wyślij zapytanie
             </a>
           </div>
-          <table className="mt-6 w-full border-collapse overflow-hidden rounded-md bg-white text-left shadow-sm ring-1 ring-steel-100">
+          <table className="mt-6 w-full border-collapse overflow-hidden rounded-md bg-white text-left shadow-sm ring-1 ring-steel-200">
             <caption className="sr-only">Parametry techniczne</caption>
             <tbody>
               {rows.map(([label, value]) => (
-                <tr key={label} className="border-b border-steel-100 last:border-0">
+                <tr key={label} className="border-b border-steel-200 last:border-0">
                   <th scope="row" className="px-4 py-3 font-medium text-steel-700">
                     {label}
                   </th>

@@ -6,7 +6,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <li
       data-product-card={product.sku}
-      className="group relative flex flex-col overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-steel-100 transition hover:-translate-y-0.5 hover:shadow-lg"
+      className="group relative flex flex-col overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-steel-200 transition hover:-translate-y-0.5 hover:shadow-lg"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-steel-100">
         <Image
@@ -17,24 +17,24 @@ export function ProductCard({ product }: { product: Product }) {
           className="object-cover transition duration-500 group-hover:scale-105"
         />
         {product.inStock && (
-          <span className="absolute left-3 top-3 rounded-sm bg-signal-500 px-2 py-1 text-xs font-bold uppercase tracking-wide text-white shadow">
+          <span className="absolute left-3 top-3 rounded-sm bg-navy-700 px-2 py-1 text-xs font-bold uppercase tracking-wide text-white shadow">
             Od ręki
           </span>
         )}
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
         <p className="text-xs font-semibold uppercase tracking-wider text-steel-500">{product.sku}</p>
-        <h3 className="font-display text-xl font-bold leading-tight">
-          <Link href={productPath(product)} className="after:absolute after:inset-0 group-hover:text-signal-600">
+        <h3 className="text-lg font-bold leading-tight text-navy-700">
+          <Link href={productPath(product)} className="after:absolute after:inset-0 group-hover:underline">
             {product.title}
           </Link>
         </h3>
         <p className="text-sm text-steel-700">
           {formatCapacity(product.capacityLiters)} · {product.material}
         </p>
-        <p className="mt-auto flex items-center justify-between border-t border-steel-100 pt-3 font-semibold">
+        <p className="mt-auto flex items-center justify-between border-t border-steel-200 pt-3 font-semibold">
           <span>{product.priceNetPln === null ? 'Cena na zapytanie' : `${formatPln(product.priceNetPln)} netto`}</span>
-          <span aria-hidden className="text-signal-600 transition group-hover:translate-x-1">
+          <span aria-hidden className="text-navy-700 transition group-hover:translate-x-1">
             →
           </span>
         </p>

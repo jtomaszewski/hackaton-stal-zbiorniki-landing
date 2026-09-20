@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { COMPANY } from '@/lib/product'
 
@@ -11,32 +12,32 @@ const NAV = [
 
 export function SiteHeader() {
   return (
-    <header className="z-40 lg:sticky lg:top-0 bg-navy-950/95 text-white shadow-lg shadow-navy-950/20 backdrop-blur">
-      <div className="hidden border-b border-white/10 sm:block">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-1.5 text-sm text-steel-300">
-          <span>Producent zbiorników stalowych od {COMPANY.since} r. · Kobierzyce k. Wrocławia</span>
+    <header className="z-40 lg:sticky lg:top-0 bg-white shadow-sm">
+      <div className="hidden bg-navy-900 text-white sm:block">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-1.5 text-sm">
           <span className="flex gap-4">
-            <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="hover:text-white">
+            <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="hover:text-navy-300">
               {COMPANY.phone}
             </a>
-            <a href={`mailto:${COMPANY.email}`} className="hover:text-white">
+            <a href={`mailto:${COMPANY.email}`} className="hover:text-navy-300">
               {COMPANY.email}
             </a>
           </span>
+          <span className="text-steel-300">Producent zbiorników stalowych od {COMPANY.since} r. · Jarocin</span>
         </div>
       </div>
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center gap-3" aria-label={`${COMPANY.shortName} — strona główna`}>
-          <span aria-hidden className="grid h-10 w-10 place-items-center rounded-md bg-signal-500 font-display text-xl font-bold shadow-inner">
-            SZ
-          </span>
-          <span className="font-display text-2xl font-bold uppercase tracking-wide">{COMPANY.shortName}</span>
+        <Link href="/" aria-label={`${COMPANY.shortName} — strona główna`}>
+          <Image src="/images/logo.svg" alt={COMPANY.shortName} width={188} height={70} priority className="h-12 w-auto" />
         </Link>
-        <nav aria-label="Menu główne" className="flex items-center gap-6">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 font-medium">
+        <nav aria-label="Menu główne" className="flex items-center gap-4">
+          <ul className="flex flex-wrap gap-x-5 gap-y-1">
             {NAV.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-steel-100 transition hover:text-signal-500">
+                <Link
+                  href={item.href}
+                  className="text-sm font-bold uppercase tracking-wide text-navy-700 transition hover:text-navy-300"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -44,7 +45,7 @@ export function SiteHeader() {
           </ul>
           <a
             href={`mailto:${COMPANY.email}`}
-            className="hidden rounded-md bg-signal-500 px-4 py-2 font-semibold transition hover:bg-signal-600 lg:inline-block"
+            className="hidden rounded-sm bg-navy-700 px-4 py-2 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-navy-800 lg:inline-block"
           >
             Wyślij zapytanie
           </a>

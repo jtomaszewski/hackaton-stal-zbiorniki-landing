@@ -1,8 +1,10 @@
-# Stal-Zbiorniki — strona demo
+# Metal Zbiorniki — strona demo
 
-Strona fikcyjnego producenta zbiorników stalowych, docelowe repo fabryki oprogramowania na
-Open Mercato ([SPEC-005](https://github.com/jtomaszewski/open-mercato-software-factory/blob/main/docs/specs/SPEC-005-2026-09-19-stal-zbiorniki-www.md)).
-Firma, dane kontaktowe i produkty są fikcyjne.
+Strona Metal Zbiorniki sp. z o.o., producenta zbiorników stalowych z Jarocina — docelowe repo
+fabryki oprogramowania na Open Mercato
+([SPEC-005](https://github.com/jtomaszewski/open-mercato-software-factory/blob/main/docs/specs/SPEC-005-2026-09-19-stal-zbiorniki-www.md)).
+Marka, dane kontaktowe, klienci i opinie pochodzą z [metal-zbiorniki.pl](https://metal-zbiorniki.pl/);
+katalog produktów i realizacje są danymi demo fabryki.
 
 Next.js (App Router) ze static export. Każdy produkt to `app/produkty/<sku>/` (`product.ts`
 z danymi + `page.tsx` z opisem) i wpis w `app/produkty/index.ts`. Zasady dla agentów: [AGENTS.md](./AGENTS.md).

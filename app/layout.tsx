@@ -1,20 +1,14 @@
 import type { Metadata } from 'next'
-import { Barlow, Barlow_Condensed } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { COMPANY } from '@/lib/product'
 import './globals.css'
 
-const barlow = Barlow({
-  variable: '--font-barlow',
+const openSans = Open_Sans({
+  variable: '--font-open-sans',
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700'],
-})
-
-const barlowCondensed = Barlow_Condensed({
-  variable: '--font-barlow-condensed',
-  subsets: ['latin', 'latin-ext'],
-  weight: ['600', '700'],
+  weight: ['400', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -23,12 +17,12 @@ export const metadata: Metadata = {
     template: `%s | ${COMPANY.shortName}`,
   },
   description:
-    'Zbiorniki stalowe na wodę pitną, paliwa, chemikalia i wodę ppoż. Produkcja od 2008 roku, atesty PZH i dozór UDT.',
+    'Polski producent zbiorników ciśnieniowych, dwupłaszczowych i nierdzewnych. Woda pitna, paliwa, chemikalia i woda ppoż. Realizacje od 2008 roku, atest PZH i uprawnienia UDT.',
 }
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="pl" className={`${barlow.variable} ${barlowCondensed.variable} h-full antialiased`}>
+    <html lang="pl" className={`${openSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <SiteHeader />
         <main className="flex-1">{children}</main>
