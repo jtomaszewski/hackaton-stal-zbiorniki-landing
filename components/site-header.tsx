@@ -7,25 +7,11 @@ const NAV = [
   { href: '/od-reki/', label: 'Od ręki' },
   { href: '/realizacje/', label: 'Realizacje' },
   { href: '/regulamin/', label: 'Regulamin' },
-  { href: '/#kontakt', label: 'Kontakt' },
 ]
 
 export function SiteHeader() {
   return (
     <header className="z-40 lg:sticky lg:top-0 bg-white shadow-sm">
-      <div className="hidden bg-navy-900 text-white sm:block">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-1.5 text-sm">
-          <span className="flex gap-4">
-            <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="hover:text-navy-300">
-              {COMPANY.phone}
-            </a>
-            <a href={`mailto:${COMPANY.email}`} className="hover:text-navy-300">
-              {COMPANY.email}
-            </a>
-          </span>
-          <span className="text-steel-300">Producent zbiorników stalowych od {COMPANY.since} r. · Jarocin</span>
-        </div>
-      </div>
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-3">
         <Link href="/" aria-label={`${COMPANY.shortName} — strona główna`}>
           <Image src="/images/logo.svg" alt={COMPANY.shortName} width={188} height={70} priority className="h-12 w-auto" />

@@ -25,7 +25,7 @@ the source of truth for products; this site changes only by PR.
 | Path | Change class | Review |
 |---|---|---|
 | `app/produkty/**` | `content` | none if checks are green |
-| `lib/realizations.ts`, `lib/content.ts`, `public/logos/**`, `public/realizacje/**` | `content` | none if checks are green |
+| `lib/realizations.ts`, `public/logos/**`, `public/realizacje/**` | `content` | none if checks are green |
 | `app/regulamin/**` | `legal` | lawyer |
 | everything else | `code` | developer |
 

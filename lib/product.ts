@@ -65,24 +65,15 @@ export function formatCapacity(liters: number): string {
   return `${new Intl.NumberFormat('pl-PL').format(liters)} l`
 }
 
+/**
+ * Brand only. This is a demo site, so it carries no real contact data: `email` is a
+ * `.example` address that the inquiry buttons point at, and there is no phone or postal
+ * address anywhere on the site.
+ */
 export const COMPANY = {
   name: 'Metal Zbiorniki sp. z o.o.',
   shortName: 'Metal Zbiorniki',
   tagline: 'Zbiorniki stalowe na miarę',
-  street: 'ul. Powstańców Wielkopolskich 1',
-  city: '63-200 Jarocin',
-  mapUrl: 'https://maps.google.com/?q=ul.+Powstańców+Wielkopolskich+1,+63-200+Jarocin',
-  phone: '+48 600 427 656',
-  email: 'biuro@metal-zbiorniki.pl',
-  nip: '6172227419',
-  regon: '526472938',
-  krs: '0001060186',
+  email: 'zapytania@metal-zbiorniki.example',
   since: 2008,
 } as const
-
-/** The three desks the company publishes, in the order the contact section lists them. */
-export const CONTACTS = [
-  { role: 'Zapytania i oferty', phone: '+48 600 427 656', email: 'biuro@metal-zbiorniki.pl' },
-  { role: 'Dokumentacje, rysunki', phone: '+48 783 380 935', email: 'projekty@metal-zbiorniki.pl' },
-  { role: 'Obsługa biura, księgowość', phone: '+48 570 062 851', email: 'sekretariat@metal-zbiorniki.pl' },
-] as const

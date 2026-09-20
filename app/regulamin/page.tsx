@@ -15,8 +15,7 @@ export default function TermsPage() {
       <h2>§ 1. Postanowienia ogólne</h2>
       <ol>
         <li>
-          Regulamin określa warunki sprzedaży zbiorników i urządzeń przez {COMPANY.name}, {COMPANY.street},{' '}
-          {COMPANY.city} (dalej: Sprzedawca).
+          Regulamin określa warunki sprzedaży zbiorników i urządzeń przez {COMPANY.name} (dalej: Sprzedawca).
         </li>
         <li>Regulamin dotyczy umów zawieranych z przedsiębiorcami.</li>
       </ol>
