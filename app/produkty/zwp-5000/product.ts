@@ -2,11 +2,11 @@ import type { Product } from '@/lib/product'
 
 export const product = {
   sku: 'ZWP-5000',
-  title: 'Zbiornik na wodę pitną 5000 l',
+  title: 'Zbiornik na wodę pitną 5200 l',
   subtitle: 'Stal nierdzewna 1.4301, atest PZH',
   category: 'woda-pitna',
   inStock: false,
-  capacityLiters: 5000,
+  capacityLiters: 5200,
   material: '1.4301',
   certifications: ['PZH'],
   dimensionsMm: { width: 1800, height: 2400, depth: 1800 },
